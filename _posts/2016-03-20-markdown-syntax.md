@@ -89,9 +89,90 @@ HTML and CSS are our tools. Mauris a ante. Suspendisse quam sem, consequat at, c
 
 {% highlight css %}
 #container {
-  float: left;
-  margin: 0 -240px 0 0;
-  width: 100%;
+  
+Param() 
+
+Set-StrictMode -Version "Latest"
+
+# Include Section
+function IncludeScript($FileName){ 
+	$Invocation = (Get-Variable MyInvocation -Scope 1).Value 
+	return  Join-Path (Split-Path $Invocation.MyCommand.Path) $FileName -resolve
+} 
+.(IncludeScript "..\Include\WatchdogCommonLibrary.ps1")
+
+
+$erroractionpreference = "SilentlyContinue"
+
+
+### GLOBAL VARIABLES ###
+$myVersion = "1.02"
+$myEvntLogScriptName = "Watchdog plug-in [ChecksyngoCommonLCMService v$myVersion]"
+$myScriptPath = $MyInvocation.MyCommand.path
+$myConfigFile = $myScriptPath + ".config.xml"
+$myCommandLine = [System.Environment]::CommandLine
+$myPid = $PID
+$myLogFile = $myScriptPath + ".log"
+$myProtocol = $null
+$myPort = $null
+$mySqlServerAddress = $null
+$myDbInstance = $null
+$myLogInfo = ""
+$aString = ""
+
+
+
+$PIDname = "WmiPrvSE"
+$ServiceToKill = "syngo.Common.LCMService"
+$count = 0
+$PIDmaxUsage = 30
+$CpuCores = (Get-WMIObject Win32_ComputerSystem).NumberOfLogicalProcessors 
+$usage = Get-Counter -ComputerName localhost '\Process(wmiprvse)\% Processor Time' `
+    | Select-Object -ExpandProperty countersamples `
+    | Select-Object -Property instancename, cookedvalue `
+    | Sort-Object -Property cookedvalue -Descending | Select-Object -First 20 `
+ 
+ 
+#Detect if returned object is an array
+if ($usage -is [system.array]){
+ 
+foreach ($i in $usage) {
+ 
+$var = $usage[$count]
+ 
+if (($var.cookedvalue/100/$CpuCores) -gt $PIDmaxUsage) {
+WriteLog "ERROR: CPU TOO HIGH! Current usage "($var.cookedvalue/100/$CpuCores)"% Restarting service"
+ 
+#restart service
+try {Restart-Service $ServiceToKill}
+catch {WriteLog "ERROR: Restart failed"}
+}
+ 
+else {
+ 
+WriteLog "INFO: Process ID: $PIDname|$count is below $PIDmaxUsage. Current Usage"($var.cookedvalue/100/$CpuCores)"%"
+}
+$count += 1
+}
+}
+ 
+else {
+$var = $usage
+ 
+if (($var.cookedvalue/100/$CpuCores) -gt $PIDmaxUsage) {
+WriteLog "ERROR: CPU TOO HIGH! Current usage "($var.cookedvalue/100/$CpuCores)"% Restarting service"
+ 
+#restart service
+try {Restart-Service $ServiceToKill}
+catch {WriteLog "Restart failed"}
+}
+ 
+else {
+ 
+WriteLog "INFO: Process ID: $PIDname|$count is below $PIDmaxUsage. Current Usage"($var.cookedvalue/100/$CpuCores)"%"
+}
+ 
+}
 }
 {% endhighlight %}
 
