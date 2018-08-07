@@ -82,10 +82,9 @@ HTML and CSS are our tools. Mauris a ante. Suspendisse quam sem, consequat at, c
 | Foot1   | Foot2   | Foot3
 {: rules="groups"}
 
-## Code Snippets
+## Code Snippet
 
 {% highlight css %}
-#container {
   
 Param() 
 
@@ -130,52 +129,12 @@ $usage = Get-Counter -ComputerName localhost '\Process(wmiprvse)\% Processor Tim
     | Sort-Object -Property cookedvalue -Descending | Select-Object -First 20 `
  
  
-#Detect if returned object is an array
-if ($usage -is [system.array]){
- 
-foreach ($i in $usage) {
- 
-$var = $usage[$count]
- 
-if (($var.cookedvalue/100/$CpuCores) -gt $PIDmaxUsage) {
-WriteLog "ERROR: CPU TOO HIGH! Current usage "($var.cookedvalue/100/$CpuCores)"% Restarting service"
- 
-#restart service
-try {Restart-Service $ServiceToKill}
-catch {WriteLog "ERROR: Restart failed"}
-}
- 
-else {
- 
-WriteLog "INFO: Process ID: $PIDname|$count is below $PIDmaxUsage. Current Usage"($var.cookedvalue/100/$CpuCores)"%"
-}
-$count += 1
-}
-}
- 
-else {
-$var = $usage
- 
-if (($var.cookedvalue/100/$CpuCores) -gt $PIDmaxUsage) {
-WriteLog "ERROR: CPU TOO HIGH! Current usage "($var.cookedvalue/100/$CpuCores)"% Restarting service"
- 
-#restart service
-try {Restart-Service $ServiceToKill}
-catch {WriteLog "Restart failed"}
-}
- 
-else {
- 
-WriteLog "INFO: Process ID: $PIDname|$count is below $PIDmaxUsage. Current Usage"($var.cookedvalue/100/$CpuCores)"%"
-}
- 
-}
-}
+
 {% endhighlight %}
 
 
 <div markdown="0"><a href="https://github.com/kfoxirl/Moon/raw/master/assets/zips/CheckSyngoCommonLCMService.zip" class="btn btn-info">Download</a></div>
 
 
-**Watch out!** You can also add notices by appending `{: .notice}` to a paragraph.
+**Watch out!** There are two versions of the Watchdog Plugin for Standard Central Server and a Clustered Central Server.
 {: .notice}
