@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Markdown Syntax"
-date:   2016-03-15
+title:  "ChecksyngoCommonLCMService.ps1"
+date:   2017-03-16
 project: true
-excerpt: "Just about everything you'll need to style in the theme: headings, paragraphs, blockquotes, tables, code blocks, and more."
+excerpt: "Checks the cpu usage of syngo.plaza syngo.Common.LCMService Service."
 tag:
 - markdown 
 - syntax
@@ -13,9 +13,16 @@ tag:
 comments: true
 ---
 
-## HTML Elements
+## History
 
-Below is just about everything you'll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.
+<#------------------------------------------------- HISTORY	----------------------------------------
+Version	Date		Author						Comments
+1.00	2017-03-16	Karl Fox			        Implemented to address issue at Crystal Run with Max CPU usage.
+1.01	2017-03-17	Karl Fox			        Changed $PIDName value to WmiPrvSE based on clarification from SE who handled initial call.
+1.02	2017-03-17	Karl Fox			        Changed to WMI Measurement of CPU Usage instead of CPU time from Get-Process.
+											
+----------------------------------------------------------------------------------------------------#>
+
 
 # Heading 1
 
