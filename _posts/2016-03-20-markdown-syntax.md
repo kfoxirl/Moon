@@ -14,7 +14,7 @@ comments: true
 ---
 
 <figure>
-	<img src="https://github.com/kfoxirl/Moon/blob/master/assets/img/powershellicon.png">
+	<img src="https://github.com/kfoxirl/Moon/blob/master/assets/img/powershellicon.png?raw=true">
 	<figcaption>Powershell Script</figcaption>
 </figure>
 
