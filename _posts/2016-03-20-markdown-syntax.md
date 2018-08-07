@@ -23,14 +23,7 @@ comments: true
 
 Checks the cpu usage of syngo.plaza syngo.Common.LCMService Service and restarts as needed.
 
-
-### History
-
-* Item one
-* Item two
-* Item three
-
-## Tables
+## History
 
 |Version | Date | Author | Comments |
 |:--------|:---------:|----------:|----------------------------------------------------------------------------------------------:|
