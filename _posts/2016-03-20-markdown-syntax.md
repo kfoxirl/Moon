@@ -19,51 +19,12 @@ comments: true
 </figure>
 
 
-## Description
+## Script Description
 
-Checks the cpu usage of syngo.plaza syngo.Common.LCMService Service
-											
-
+Checks the cpu usage of syngo.plaza syngo.Common.LCMService Service and restarts as needed.
 
 
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-##### Heading 5
-
-###### Heading 6
-
-### Body text
-
-Lorem ipsum dolor sit amet, test link adipiscing elit. **This is strong**. Nullam dignissim convallis est. Quisque aliquam.
-
-![Smithsonian Image](https://mmistakes.github.io/minimal-mistakes/images/3953273590_704e3899d5_m.jpg)
-{: .image-right}
-
-*This is emphasized*. Donec faucibus. Nunc iaculis suscipit dui. 53 = 125. Water is H2O. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. The New York Times (That’s a citation). Underline.Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.
-
-HTML and CSS are our tools. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.
-
-### Blockquotes
-
-> Lorem ipsum dolor sit amet, test link adipiscing elit. Nullam dignissim convallis est. Quisque aliquam.
-
-## List Types
-
-### Ordered Lists
-
-1. Item one
-   1. sub item one
-   2. sub item two
-   3. sub item three
-2. Item two
-
-### Unordered Lists
+### History
 
 * Item one
 * Item two
@@ -71,15 +32,12 @@ HTML and CSS are our tools. Mauris a ante. Suspendisse quam sem, consequat at, c
 
 ## Tables
 
-| Header1 | Header2 | Header3 |
-|:--------|:-------:|--------:|
-| cell1   | cell2   | cell3   |
-| cell4   | cell5   | cell6   |
-|----
-| cell1   | cell2   | cell3   |
-| cell4   | cell5   | cell6   |
+|Version | Date | Author | Comments |
+|:--------|:-------:|--------:|--------:|
+| 1.00   | 2017-03-16 | Karl Fox  | Implemented to address issue at Crystal Run with Max CPU usage.   |
+| 1.01   | 2017-03-17 | Karl Fox  | Changed $PIDName value to WmiPrvSE based on clarification from SE who handled initial call.   |
+| 1.02   | 2017-03-17 | Karl Fox  | Changed to WMI Measurement of CPU Usage instead of CPU time from Get-Process.  |
 |=====
-| Foot1   | Foot2   | Foot3
 {: rules="groups"}
 
 ## Code Snippet
