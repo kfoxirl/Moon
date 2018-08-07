@@ -15,16 +15,13 @@ comments: true
 
 <figure>
 	<img src="https://github.com/kfoxirl/Moon/blob/master/assets/img/powershellicon.png?raw=true">
-	<figcaption>Powershell Script</figcaption>
+	
 </figure>
 
 
-## History
+## Description
 
-Version	Date		Author						Comments
-1.00	2017-03-16	Karl Fox			        Implemented to address issue at Crystal Run with Max CPU usage.
-1.01	2017-03-17	Karl Fox			        Changed $PIDName value to WmiPrvSE based on clarification from SE who handled initial call.
-1.02	2017-03-17	Karl Fox			        Changed to WMI Measurement of CPU Usage instead of CPU time from Get-Process.
+Checks the cpu usage of syngo.plaza syngo.Common.LCMService Service
 											
 
 
@@ -176,31 +173,9 @@ WriteLog "INFO: Process ID: $PIDname|$count is below $PIDmaxUsage. Current Usage
 }
 {% endhighlight %}
 
-## Buttons
 
-Make any link standout more when applying the `.btn` class.
+<div markdown="0"><a href="https://github.com/kfoxirl/Moon/raw/master/assets/zips/CheckSyngoCommonLCMService.zip" class="btn btn-info">Download</a></div>
 
-{% highlight html %}
-<a href="#" class="btn btn-success">Success Button</a>
-{% endhighlight %}
-
-<div markdown="0"><a href="#" class="btn">Primary Button</a></div>
-<div markdown="0"><a href="#" class="btn btn-success">Success Button</a></div>
-<div markdown="0"><a href="#" class="btn btn-warning">Warning Button</a></div>
-<div markdown="0"><a href="#" class="btn btn-danger">Danger Button</a></div>
-<div markdown="0"><a href="#" class="btn btn-info">Info Button</a></div>
-
-## KBD
-
-You can also use `<kbd>` tag for keyboard buttons.
-
-{% highlight html %}
-<kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>
-{% endhighlight %}
-
-Press <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> to move your car. **Midtown Maddness!!**
-
-## Notices
 
 **Watch out!** You can also add notices by appending `{: .notice}` to a paragraph.
 {: .notice}
