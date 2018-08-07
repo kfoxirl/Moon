@@ -13,15 +13,20 @@ tag:
 comments: true
 ---
 
+<figure>
+	<img src="https://github.com/kfoxirl/Moon/blob/master/assets/img/powershellicon.png">
+	<figcaption>Powershell Script</figcaption>
+</figure>
+
+
 ## History
 
-<#------------------------------------------------- HISTORY	----------------------------------------
 Version	Date		Author						Comments
 1.00	2017-03-16	Karl Fox			        Implemented to address issue at Crystal Run with Max CPU usage.
 1.01	2017-03-17	Karl Fox			        Changed $PIDName value to WmiPrvSE based on clarification from SE who handled initial call.
 1.02	2017-03-17	Karl Fox			        Changed to WMI Measurement of CPU Usage instead of CPU time from Get-Process.
 											
-----------------------------------------------------------------------------------------------------#>
+
 
 
 # Heading 1
