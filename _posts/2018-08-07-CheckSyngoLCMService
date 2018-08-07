@@ -22,19 +22,18 @@ comments: false
 <iframe src="https://ghbtns.com/github-btn.html?user=TaylanTatli&repo=Moon&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>    
       
 ## Installation
-1. Extract the PS1 file to the D:\Syngo.Plaza\Watchdog\Plugins\ directory.
-2. Unblock script if server security requires this step.
-3. Replace the Resource entry for syngo.Common.LCMService with the line below.  
+* Extract the PS1 file to the D:\Syngo.Plaza\Watchdog\Plugins\ directory.
+* Unblock script if server security requires this step.
+* Replace the Resource entry for syngo.Common.LCMService with the line below.  
 
-
-<Resource Name="syngo.Common.LCMService" ServiceName="syngo.Common.LCMService" DisplayName="syngo.Common.LCMService" StatusFile="syngo.Common.LCMService.Status.xml" MaxFailureCount="5" SequenceNumber="1500">
-    <ProcessList>
-        <Process Name="syngo.Common.LCMService" SequenceNumber="1"/> 
-    </ProcessList>
- <ExtendedChecks>
-          <Command Script=".\plugins\ChecksyngoCommonLCMService.ps1 -processName syngo.Common.LCMService -serviceName syngo.Common.LCMService" Timeout="60" TimeoutTolerance="1" ErrorTolerance="0" ExecutionRatio="1" Critical="True" SequenceNumber="1" />
-        </ExtendedChecks> 
-  </Resource>   
+*<Resource Name="syngo.Common.LCMService" ServiceName="syngo.Common.LCMService" DisplayName="syngo.Common.LCMService" StatusFile="syngo.Common.LCMService.Status.xml" MaxFailureCount="5" SequenceNumber="1500">
+ *   <ProcessList>
+  *      <Process Name="syngo.Common.LCMService" SequenceNumber="1"/> 
+   * </ProcessList>
+ *<ExtendedChecks>
+  *        <Command Script=".\plugins\ChecksyngoCommonLCMService.ps1 -processName syngo.Common.LCMService -serviceName syngo.Common.LCMService" Timeout="60" TimeoutTolerance="1" ErrorTolerance="0" ExecutionRatio="1" Critical="True" SequenceNumber="1" />
+   *     </ExtendedChecks> 
+  *</Resource>   
      
 That's all.
 
